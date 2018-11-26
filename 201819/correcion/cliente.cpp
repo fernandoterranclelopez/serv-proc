@@ -38,7 +38,8 @@ main(int argc, char *argv[]){
                 if(strcmp(palabra,"quit\n") == 0)
                         value = true;
                 //Concatenamos cada palabra a la lista
-                strncat(buffer,palabra,longitud);
+                else
+                        strncat(buffer,palabra,longitud);
         }while(value == false);
         //Enviamos la lista al servidor
         send(fd_server,buffer,strlen(buffer),0);
@@ -49,5 +50,5 @@ main(int argc, char *argv[]){
 
 
 
-	return EXIT_SUCCESS;
+        return EXIT_SUCCESS;
 }
